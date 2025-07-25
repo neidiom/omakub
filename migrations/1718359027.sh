@@ -69,5 +69,5 @@ gum style \
 	"2. Alacritty theme/font has been reset. Use omakub app to set again." \
 	"3. To use Pano, the new clipboard manager, enable in Gnome Extensions."
 
-gum confirm "Set your application dock to default with new apps?" && source $OMAKUB_PATH/install/desktop/set-dock.sh
-gum confirm "Ready to logout for all settings to take effect?" && gnome-session-quit --logout --no-prompt
+gum confirm "Set your application dock to default with new apps?" --prompt.foreground "212" && source $OMAKUB_PATH/install/desktop/set-dock.sh
+gum confirm "Ready to logout for all settings to take effect?" --prompt.foreground "212" && gnome-session-quit --logout --no-prompt
