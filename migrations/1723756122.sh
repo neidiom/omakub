@@ -23,11 +23,11 @@ gsettings set org.gnome.shell.extensions.tophat network-usage-unit bits
 
 # Set TopHat metrics color to match the theme
 THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa" "Rose Pine")
-THEME=$(gum choose "${THEME_NAMES[@]}" "Default" --header "Choose your theme" --height 10 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME=$(gum choose "${THEME_NAMES[@]}" "Default" --header "Choose your theme" --height 10 --cursor-prefix "> " --header.foreground "240" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 if [ -n "$THEME" ] && [ "$THEME" != "default" ]; then
   source $OMAKUB_PATH/themes/$THEME/tophat.sh
 fi
 
 # Logout
-gum confirm "Ready to logout for all settings to take effect?" && gnome-session-quit --logout --no-prompt
+gum confirm "Ready to logout for all settings to take effect?" --prompt.foreground "212" && gnome-session-quit --logout --no-prompt
