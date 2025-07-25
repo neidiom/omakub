@@ -11,7 +11,7 @@ fi
 
 # Set the theme for btop
 THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa" "Rose Pine")
-THEME=$(gum choose "${THEME_NAMES[@]}" ">> Skip" --header "Choose your current theme" --height 10 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+THEME=$(gum choose "${THEME_NAMES[@]}" ">> Skip" --header "Choose your current theme" --height 10 --cursor-prefix "> " --header.foreground "240" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 if [ -n "$THEME" ] && [ "$THEME" != ">>-skip" ]; then
   if [ -f "$OMAKUB_PATH/themes/$THEME/btop.theme" ]; then
